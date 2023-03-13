@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let week = ["Tue", "Thu", "Sat", "Nine"]
+        // In ra mảng ban đầu
+        document.write(`Mảng ban đầu: ${week}`)
+        // Thêm và xoá các phần tử trong mảng
+        week.splice(length-1,1)
+        week.unshift("Mon")
+        week.splice(2,0,"We")
+        week.splice(4,0,"Fri")
+        week.splice(6,0,"Sun")
+        // In ra kết quả
+        document.write(`<br>Mảng sau khi thêm và xoá: ${week}`)
+        console.log(week)
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="ho"></div>
+    <div class="dem"></div>
+    <div class="ten"></div>
+    <div class="nameNew"></div>
+    <script>
+        // Nhập họ và tên
+        let name = prompt("Nhập họ và tên")
+        // Nhập giới tính
+        let gender = prompt("Nhập giới tính")
+        console.log(name)
+        // Chuyển chuỗi thành mảng bằng các phần tử riêng biệt
+        let arrName = name.split(" ")
+        console.log(arrName)
+        // Gắn họ cho phần tử đầu tiên của mảng 
+        var ho = arrName[0]
+        // Gắn tên cho phần tử cuối cùng của mảng
+        var ten = arrName[arrName.length-1]
+        // Cắt phần tử thứ 2 đến vị trí cuối cùng của mảng và ngăn cách các phần tử bằng khoảng trắng 
+        var dem = arrName.slice(1, arrName.length-1).join(" ")
+        console.log(ho)
+        console.log(dem)
+        console.log(ten)
+        // In họ ra màn hình
+        document.querySelector('.ho').innerHTML = `Họ: ${ho}`
+        // In tên ra màn hình
+        document.querySelector('.ten').innerHTML = `Tên: ${ten}`
+        // In tên đệm ra màn hình
+        document.querySelector('.dem').innerHTML = `Tên đệm: ${dem}`
+        // Nếu giới tính = Nam
+        if (gender === 'Nam'){
+        // Gắn tên đệm = "Văn" và in ra tên mới
+        dem = "Văn"
+        let nameNew = document.querySelector('.nameNew').innerHTML = `Tên mới: ${ho} ${dem} ${ten}`
+        } else{
+        // Nếu không thì gắn tên đệm = "Vẽ" và in ra màn hình
+        dem = "Vẽ"
+        let nameNew = document.querySelector('.nameNew').innerHTML = `Tên mới: ${ho} ${dem} ${ten}` 
+        }
+    </script>
+</body>
+</html>
+
+

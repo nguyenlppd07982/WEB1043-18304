@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Nhập a
+    let a = parseInt(prompt("Nhập a:"))
+    // Nhập b
+    let b = parseInt(prompt("Nhập b:")) 
+    // Nhập c    
+    let c =parseInt( prompt("Nhập c:"))
+    // Nếu a = b, b = c, c = a
+    if(a === b && b === c && c === a)
+    {
+    // In ra đây là tam giác cân
+        alert("Đây là tam giác cân")
+    // Nếu a*a = b*b + c*c hoặc b*b = a*a + c*c hoặc c*c = a*a + b*b thì in ra đây là tam giác vuông
+    } else if (a*a === b*b + c*c || b*b === a*a + c*c || c*c === a*a + b*b ){
+        alert("Đây là tam giác vuông")
+    } else{
+    // In ra đây là tam giác thường nếu các điều kiện trên không đúng
+        alert("Đây là tam giác thường")
+    }
+
+    </script>
+</body>
+</html>
