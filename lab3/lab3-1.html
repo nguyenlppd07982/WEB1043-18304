@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+<script>
+    var input = parseInt(prompt("Nhập chức năng\n1. Tính điểm trung bình (switch case)\n2. Tính điểm trung bìn (if else)\n0. Thoát"))
+
+    if(input == 1 || input == 2){
+        do {
+        var toan = parseInt(prompt("Nhập điểm toán"))
+        var ly = parseInt(prompt("Nhập điểm lý"))
+        var hoa = parseInt(prompt("Nhập điểm hoá"))
+        var sinh = parseInt(prompt("Nhập điểm sinh"))
+    }while (toan <= 0 || toan >= 10 && ly <= 0 || ly >= 10 && hoa <= 0 || hoa >= 10 && sinh <= 0 || sinh >= 10  )
+    }
+    
+       
+    var medium = (toan + ly + hoa + sinh)/4
+    console.log(`Điểm trung bình: ${medium}`)
+
+    function tinhIfElse (){
+        if(medium <= 10 && medium >= 9){
+            console.log("Xếp loại giỏi");
+            } else if (medium < 9 && medium >= 7){
+            console.log("Xếp loại khá");
+            } else if (medium < 7 && medium >= 5){
+            console.log("Xếp loại trung bình");
+            } else {
+            console.log("Xếp loại yếu");
+            }
+       }
+
+
+    switch (input) {
+        case 1:
+            console.log("1. Tính điểm trung bình (switch case)");
+            
+           break;
+        case 2:
+            console.log("2. Tính điểm trung bìn (if else)")
+            tinhIfElse ()
+            break;
+        default:
+        console.log("Bạn đã thoát")
+            break;
+    }
+
+ 
+    
+
+
+
+
+   
+
+
+   
+</script>
+</html>
