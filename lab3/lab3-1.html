@@ -10,44 +10,80 @@
    
 </body>
 <script>
+    // Cho người dùng chọn chức năng
     var input = parseInt(prompt("Nhập chức năng\n1. Tính điểm trung bình (switch case)\n2. Tính điểm trung bìn (if else)\n0. Thoát"))
-
+    // Nếu nhập vào 1 hoặc 2 thì hiển thị cho người dùng nhập điểm
     if(input == 1 || input == 2){
         do {
         var toan = parseInt(prompt("Nhập điểm toán"))
         var ly = parseInt(prompt("Nhập điểm lý"))
         var hoa = parseInt(prompt("Nhập điểm hoá"))
         var sinh = parseInt(prompt("Nhập điểm sinh"))
+    // Kiểm tra nếu người dùng nhập điểm bé hơn 0 hoặc lớn hơn 10 thì cho người dùng nhập lại
     }while (toan <= 0 || toan >= 10 && ly <= 0 || ly >= 10 && hoa <= 0 || hoa >= 10 && sinh <= 0 || sinh >= 10  )
     }
-    
-       
+    // Tính điểm trung bình
     var medium = (toan + ly + hoa + sinh)/4
+    // Hiển thị điểm trung bình
     console.log(`Điểm trung bình: ${medium}`)
-
+    // Hàm tính điểm bằng if else
     function tinhIfElse (){
+            // Nếu điểm bé hơn hoặc bằng 10 và lớn hơn hoặc bằng 9 thì hiển thị "Xếp loại giỏi"
         if(medium <= 10 && medium >= 9){
             console.log("Xếp loại giỏi");
+            // Nếu điểm bé hơn 9 và lớn hơn hoặc bằng 7 thì hiển thị "Xếp loại khá"
             } else if (medium < 9 && medium >= 7){
             console.log("Xếp loại khá");
+            // Nếu điểm bé hơn 7 và lớn hơn hoặc bằng 5 thì hiển thị "Xếp loại  bình"
             } else if (medium < 7 && medium >= 5){
             console.log("Xếp loại trung bình");
             } else {
+            // Nếu các điều kiện trên sai thì hiển thị "Xếp loại yếu"
             console.log("Xếp loại yếu");
             }
        }
-
-
+    // Hàm tính điểm bằng switch case
+    function tinhSwitchCase(){
+        // Làm tròn điểm trung bình và gắn cho biến result
+        result = Math.round(medium)
+        // Hiển thị điểm trung bình sau khi làm tròn
+        console.log(`Điểm trung bình sau khi làm tròn: ${result}`)
+        switch (result) {
+            // Nếu result bằng 10 hoặc 9 thì hiển thị "Xếp loại giỏi"
+            case 10:
+            case 9:
+            console.log("Xếp loại giỏi");
+                break;
+            // Nếu result bằng 8 hoặc 7 thì hiển thị "Xếp loại khá"
+            case 8:
+            case 7:
+            console.log("Xếp loại khá");
+                break; 
+            // Nếu result bằng 6 hoặc 5 thì hiển thị "Xếp loại trung bình"
+            case 6:
+            case 5:
+            console.log("Xếp loại trung bình");
+                break;
+            default:
+            // Nếu không thì hiển thị "Xếp loại yếu"
+            console.log("Xếp loại yếu");
+                break;
+        }
+    }
+    // Phần Menu
     switch (input) {
+        // Nếu nhập 1 thì thực hiện hàm tinhSwitchCase()
         case 1:
             console.log("1. Tính điểm trung bình (switch case)");
-            
+            tinhSwitchCase()
            break;
         case 2:
+        // Nếu nhập 2 thì thực hiện hàm tinhIfElse()
             console.log("2. Tính điểm trung bìn (if else)")
             tinhIfElse ()
             break;
         default:
+        // Nếu không thì sẽ hiển thị "Bạn đã thoát"
         console.log("Bạn đã thoát")
             break;
     }
