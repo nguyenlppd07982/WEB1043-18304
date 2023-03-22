@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 192px;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 50px 50px 50px 50px;
+        }
+        input[type=text]{
+            width: 100%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <input id="ketqua" type="text" value ="0" >
+    <div class="container">
+        <input type="button" value="7" onclick="set_num(this.value)">
+        <input type="button" value="8" onclick="set_num(this.value)">
+        <input type="button" value="9" onclick="set_num(this.value)">
+        <input type="button" value="+" onclick="set_num(this.value)">
+        <input type="button" value="4" onclick="set_num(this.value)">
+        <input type="button" value="5" onclick="set_num(this.value)">
+        <input type="button" value="6" onclick="set_num(this.value)">
+        <input type="button" value="-" onclick="set_num(this.value)">
+        <input type="button" value="1" onclick="set_num(this.value)">
+        <input type="button" value="2" onclick="set_num(this.value)">
+        <input type="button" value="3" onclick="set_num(this.value)">
+        <input type="button" value="*" onclick="set_num(this.value)">
+        <input type="button" value="0" onclick="set_num(this.value)">
+        <input type="button" value="C" onclick="xoa()">
+        <input type="button" value="=" onclick="result()">
+        <input type="button" value="/" onclick="set_num(this.value)">
+    </div>
+    <script>
+        // Cho kết quả bằng chuỗi rỗng
+        var number = ''
+        // Get element của input có id = ketqua và gắn và idResult
+        var idResult = document.getElementById('ketqua')
+        function set_num(value){
+            // Gắn number = value button
+            number+= value
+            // Gắn value của id ketqua bằng biến number
+            idResult.value = number
+        }   
+        function xoa(){
+            // Gắn biến number bằng 0
+            number='0'
+            // Gắn value của id ketqua bằng number
+            idResult.value = number
+        }
+        function result(){
+            // Nếu number bằng chuỗi rỗng hoặc bằng 0 thì thông báo "Vui lòng nhập phép tính"
+            if(number == "" || number == 0){
+                alert("Vui lòng nhập phép tính")
+            }
+            // Gắn value của ketqua bằng kết quả
+            idResult.value = eval(idResult.value)
+            // Gắn number bằng kết quả
+            number=idResult.value
+        }
+    </script>
+</body>
+</html>
