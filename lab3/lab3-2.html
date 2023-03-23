@@ -7,19 +7,63 @@
     <title>Document</title>
     <style>
         body{
-            width: 192px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .main{
+            width: 400px;
+            margin: 50px auto;
         }
         .container{
+            width: 400px;
+            height: 100%;
+            background-color: aqua;
+            border-radius: 0 0 8px 8px;
             display: grid;
-            grid-template-columns: 50px 50px 50px 50px;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 100px 100px 100px 100px;
+        }
+        input[type=button]{
+            border-radius: 50%;
+            border: none;
+            margin: 10px;
+            font-size: 38px;
         }
         input[type=text]{
+            text-align: right;
+            font-size: 48px;
+            border-radius: 8px 8px 0 0;
+            padding: 0;
             width: 100%;
-            height: 30px;
+            height: 60px;
+            border:none;
+            background-color: #f8dfdf;
+            outline: none;
+            overflow: hidden;
+        } 
+        input[type=button]:hover{
+            background-color: #e8b6b6;
+        }
+        input[value= "+" ]{
+            background-color: #20B2AB;
+        }
+        input[value= "-" ]{
+            background-color: #ED8400;
+        }
+        input[value= "*" ]{
+            background-color: #F08080;
+        }
+        input[value= "/" ]{
+            background-color: #7D93E1;
+        }
+        input[value= "=" ]{
+            background-color: #9478B0;
         }
     </style>
 </head>
 <body>
+    <div class="main">
     <input id="ketqua" type="text" value ="0" >
     <div class="container">
         <input type="button" value="7" onclick="set_num(this.value)">
@@ -67,5 +111,10 @@
             number=idResult.value
         }
     </script>
+    </div>
 </body>
 </html>
+
+
+
+
