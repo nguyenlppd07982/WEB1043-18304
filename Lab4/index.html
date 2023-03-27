@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+            constructor(id, first_name, last_name, class_id, email, phone_number, dob){
+                this.id = id;
+                this.first_name = first_name;
+                this.last_name = last_name;
+                this.class_id = class_id;
+                this.email = email;
+                this.phone_number = phone_number
+                this.dob = new Date(dob);
+            }
+             getFullName(){
+                console.log(`${this.last_name} ${this.first_name}`)
+            }
+    getAge() {
+    const today = new Date();
+    // Giây
+    // Ngày hiện tại trừ ngày sinh bằng mili giây chia 1000 để đổi ra giây
+    const diffTime = Math.round((today - this.dob)/1000);
+    // Ngày
+    // Giây chia số giây trong 1 ngày (60 giây * 60 phút * 24 giờ)
+    const diffDays = Math.round(diffTime / (60 * 60 * 24));
+    // Tuổi
+    // số ngày chia cho 365 để tính ra năm
+    const ageInYears = Math.round(diffDays / 365);
+    
+      console.log(diffTime)
+      console.log(`Số tuổi id ${this.id}: ${ageInYears}`)
+      console.log(`Số ngày: ${diffDays}`)
+      return ageInYears
+
+    };
+        }
+        const students = [
+            new Student(1, "Nguyên", "Lê", 18304, "admin@admin.net.vn", 0763636353, "2004-08-21"),
+            new Student(2, "Vi", "Yến", 18304, "admin@admin.net.vn", 0763636353, "2004-08-21"),
+            new Student(3, "Minh", "Xuân", 18304, "admin@admin.net.vn", 0763636353, "2004-08-21"),
+            new Student(4, "Hương", "Quỳnh", 18304, "admin@admin.net.vn", 0763636353, "2004-08-21"),
+            new Student(5, "Hy", "Minh", 18304, "admin@admin.net.vn", 0763636353, "2004-08-21"),
+            ];
+         console.log(`${window.innerHeight} px`)  
+         console.log(`${window.innerWidth} px`)   
+    </script>
+</body>
+</html>
