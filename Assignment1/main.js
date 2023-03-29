@@ -59,19 +59,67 @@ function shows3() {
     activeProducs1.classList.remove("avtive")
 }
 
+let slideIndex = 1;
+showSlides(slideIndex);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlide");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
 
-function next(){
-    var test = document.querySelector('.banner')
-    console.log(test);
-    test.removeAttribute("background-image" )
-    test.setAttribute("style" , "background-image: url(./slide-bg-1.jpg);")
+  slides[slideIndex-1].style.display = "block";
 }
 
-function back(){
-    var test = document.querySelector('.banner')
-    console.log(test);
-    test.removeAttribute("background-image" )
-
-    test.setAttribute("style" , "background-image: url(./slide-bg-2.jpg);")
+function showNotification(){
+    // Lấy value SDT để kt đúng định dạng hay kh
+    var lengthPhone = document.querySelector('.formPhone').value;
+    var valueEmail = document.querySelector('.formMail').value;
     
+    var notification = document.querySelector('.notification');
+    var notificationMail = document.querySelector('.notificationMail');
+    var notificationPhone = document.querySelector('.notificationPhone');
+    notificationPhone.style.display = 'none';
+    notificationMail.style.display = 'none';
+    notification.style.display = 'none';
+    var notiPhone = false
+    var notiMail = true
+    // Vị trí @
+    var atposition = valueEmail.indexOf("@");
+    // Vị trí cuối cùng của "."
+    var dotposition = valueEmail.lastIndexOf(".");
+    // Nếu vị trí @ < 1 hoặc 
+    // vị trí cuối của "." < vị trí @ +2 hoặc 
+    // vị trí cuối của "." + 2 >= độ dài của mail
+    if (atposition < 1 || dotposition < (atposition + 2) || (dotposition + 2) >= valueEmail.length) {
+        notificationMail.style.display = 'block';
+        notiMail = false;
+    }
+    if(lengthPhone.length != 10 ){
+        notificationPhone.style.display = 'block';
+    } else{
+        notiPhone = true
+    }
+    if(notiPhone == true && notiMail == true){
+        notification.style.display = "block";
+    }
+
 }
+var count_cart = document.querySelector(".add_cart")
+var number_products = document.querySelector('.number_products')
+var count = 0;
+
+function add_cart(){
+    count++;
+    number_products.innerHTML = count;
+    console.log(count)
+}
+// count_cart.addEventListener("click",add_cart)

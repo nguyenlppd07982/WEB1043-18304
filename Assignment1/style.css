@@ -61,8 +61,14 @@ body{
     height: 35px;
     width: 35px;
     margin: 0;
+    cursor: pointer;
     background-color: #C8997A;
 } 
+
+.fa-heart:hover{
+    color: red;
+    transition: all 0.3s ease;
+}
 .cart {
     display: flex;
     align-items: center;
@@ -139,11 +145,35 @@ body{
 }
 .box_watch {
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 15%;
     width: 35%;
     height: 40%;
 }
+.box_watch a{
+    text-decoration: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
 
 .content{
     margin: auto;
@@ -469,10 +499,24 @@ form{
     outline: none;
     height: 35px;
     width: 48%;
-   margin: 10px 0;
+   margin: 5px 0;
    padding-left: 8px;
-   
-
+}
+.shopping{
+    position: relative;
+}
+.number_products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #e75d3d;
+    top: -5px;
+    right: 2px;
+    border-radius: 50%;
 }
 .form textarea:focus,
 .form .input:focus{
@@ -480,9 +524,12 @@ form{
 }
 .form textarea {
     width: 100%;
+    /* min-width: 100%; */
+    max-height: 100px;
     background-color: #F1F1F1;
-    height: 100px;
-    margin: 0;
+    /* height: 100px; */
+    min-height: 100px;
+    margin: 5px 0 0 0 ;
     font-family: 'Poppins', sans-serif;
     padding-left: 8px;
     padding-top: 8px;
@@ -523,4 +570,20 @@ footer{
 .footer .license{
     color: #fff;
     font-size: 18px;
+}
+.notification{
+    width: 60%;
+    font-size: 18px;
+    color: #11C25D;
+    margin-top: 10px;
+    display: none;
+    font-weight: bold;
+}
+.notificationPhone,
+.notificationMail{
+    display: none;
+}
+.notifi{
+    width: 60%;
+    margin: auto;
 }
