@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/59847bd5e5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="up" class="container">
+    <a href="#up"><div class="btn"><i class="fa-solid fa-angles-up fa-xl"></i></div></a>
+    <head>
+        <nav>
+            <div class="nav_head">
+                <div class="logo">
+                    <img src="./logo.png">
+                </div>
+                <div class="seach">
+                    <input type="text" placeholder="Tìm Kiếm"><i class="fa-solid fa-magnifying-glass"></i>
+                    
+                </div>
+                <div class="cart">
+                    <a href="">ĐĂNG NHẬP</a>
+                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+            <div class="nav_menu">
+                <a href="">TRANG CHỦ</a>
+                <a href="#introduce">GIỚI THIỆU</a>
+                <a href="#popular_products">ĐỒNG HỒ NAM</a>
+                <a href="#popular_products">ĐỒNG HỒ NỮ</a>
+                <a href="#news">TIN TỨC</a>
+                <a href="">LIÊN HỆ</a>
+            </div>
+        </nav>
+        <div class="banner" style="background-image: url(./slide-bg-2.jpg);">
+            <button onclick="back()" class="slide">Back</button>
+            <button onclick="next()" class="slide">Next</button>
+            <div class="box_watch">
+            <div class="name_brand">NguyenLP Watch</div>
+            <div class="name_watch">Đồng Hồ Classico</div>
+            <div class="description_watch">Cùng với sự phát triển không ngừng  của thời trang thế giới, rất nhiều thương hiệu cho ra đời những mẫu đồng hồ nam chính hãng đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ...</div>
+            <a href="#products"><div class="view_product">XEM SẢN PHẨM</div></a>
+        </div>
+        </div>
+    </head>
+    <content>
+        <div class="content">
+            <div class="time_down">
+                <div class="box_sale">
+                 <div class="title_time"><h1>Black Friday</h1></div> 
+                 <div class="title_end"><h2>LIMITED TIME OFFER</h2></div>
+                 <div class="time">
+                    <div class="hourse">00 </div>&nbsp;
+                    <div class="minutes">00 </div>&nbsp;
+                    <div class="seconds">00</div>
+                 </div>
+                </div>
+            </div>
+            <div class="page_product1">
+                <div class="trend">
+                    <div class="trend_male">
+                        <div class="box_trend1">
+                            <div class="trend_year">Xu hướng 2023</div>
+                            <div class="watch_gender"><h1>ĐỒNG HỒ NAM</h1></div>
+                         </div>
+                    </div>
+                    <div class="trend_female">
+                        <div class="box_trend1">
+                            <div class="trend_year">Xu hướng 2023</div>
+                            <div class="watch_gender"><h1>ĐỒNG HỒ NỮ</h1></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="selling_products">
+                    <h3 id="products">Sản phẩm bán chạy</h3>
+                <div class="products">
+                    <div class="box_products">
+                        <div class="img_products"><img src="./product-05.png"></div>
+                        <div class="name_products">Classico 1</div>
+                        <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
+                        <button>THÊM VÀO GIỎ</button>
+                    </div>
+                    <div class="box_products">
+                        <div class="img_products"><img src="./product-04.png"></div>
+                        <div class="name_products">Classico 2</div>
+                        <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
+                        <button>THÊM VÀO GIỎ</button>
+                    </div><div class="box_products">
+                        <div class="img_products"><img src="./product-03.png"></div>
+                        <div class="name_products">Classico 3</div>
+                        <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
+                        <button>THÊM VÀO GIỎ</button>
+                    </div><div class="box_products">
+                        <div class="img_products"><img src="./product-02.png"></div>
+                        <div class="name_products">Classico 4</div>
+                        <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
+                        <button>THÊM VÀO GIỎ</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="page_product2">
+                <div class="trend2">
+                    <div class="trend_classic">
+                        <div class="box_trend2">
+                            <div class="name_trend"><h1>CỔ ĐIỂN</h1></div>
+                            <div class="des_trend">Đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ…</div>
+                         </div>
+                    </div>
+                    <div class="trend_smart">
+                        <div class="box_trend2">
+                            <div class="name_trend"><h1>SMART WATCH</h1></div>
+                            <div class="des_trend">Đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ…</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="popular_products" class="name_list_products">
+                    <h3 onclick="shows1()" class="group_products1 avtive">Sản phẩm phổ biến</h3>
+                    <h3 onclick="shows2()" class="group_products2">Sản phẩm khuyến mãi </h3>
+                    <h3 onclick="shows3()" class="group_products3">Sản phẩm mới</h3>
+                </div>
+                <div class="products">
+                    <div class="productsAll products_page1">
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-06.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-08.jpg"></div>
+                            <div class="name_products">Classico 2</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-09.jpg"></div>
+                            <div class="name_products">Classico 3</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-10.jpg"></div>
+                            <div class="name_products">Classico 4</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-11.jpg"></div>
+                            <div class="name_products">Classico 5</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-12.jpg"></div>
+                            <div class="name_products">Classico 6</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="name_products">Classico 7</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-14.jpg"></div>
+                            <div class="name_products">Classico 8</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                    <div style="display: none" class="productsAll products_page2">
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-10.jpg"></div>
+                            <div class="name_products">Classico 9</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-11.jpg"></div>
+                            <div class="name_products">Classico 10</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-07.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-06.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-08.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-12.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                    <div style="display: none" class="productsAll products_page3">
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-07.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-08.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-01.png"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-06.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-11.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-12.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                        <div class="box_products">
+                            <div class="img_products"><img src="./product-09.jpg"></div>
+                            <div class="name_products">Classico 1</div>
+                            <div class="price_products">800.000đ</div>
+                            <button>THÊM VÀO GIỎ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="introduce" class="introduce">
+                <h1>Giới thiệu</h1>
+                <div class="box_intro">
+                    <img src="./about-us_bg.jpg" alt="">
+                    <div class="about_us">
+                        <div class="title"><h1>Giới thiệu về Watch NguyenLP</h1> </div>
+                        <div class="description">“Cùng với sự phát triển không ngừng của thời trang thế giới, rất nhiều thương hiệu cho ra đời những mẫu đồng hồ nam chính hãng đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ… Một chiếc đồng hồ nam cao cấp chính hãng khắc họa một giá trị đích thực khi nói đến phụ kiện xa xỉ dành cho phái mạnh. Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay. Trên cổ tay của những người đàn ông thành đạt luôn dành vị trí cho một chiếc đồng hồ nam cao cấp.”
+                        </div>
+                    </div>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="title"><h3>Hàng chính hãng</h3></div>
+                            <div class="description">Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay</div>
+                        </td>
+                        <td>
+                            <div class="title"><h3>Sản phẩm mới 100%</h3></div>
+                            <div class="description">Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay</div>
+                        </td> <td>
+                            <div class="title"><h3>Bảo hành 12 tháng</h3></div>
+                            <div class="description">Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="title"><h3>Đổi trả trong vòng 7 ngày</h3></div>
+                            <div class="description">Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay</div>
+                        </td> <td>
+                            <div class="title"><h3>Miễn phí giao hàng</h3></div>
+                            <div class="description">Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay</div>
+                        </td> <td>
+                            <div class="title"><h3>Giá cả hợp lý</h3></div>
+                            <div class="description">Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay</div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div id="news" class="page_news">
+                <h1>Tin tức</h1>
+                <div class="news">
+                <div class="box_news">
+                    <img src="./new-3.jpg">
+                    <div class="title_news"><a href="">Chiếc đồng hồ của những CEO quyền lực nhất thế giới</a></div>
+                    <div class="description_news">Đối với một số doanh nhân, một chiếc đồng hồ đeo tay không chỉ là ...</div>
+                </div>
+                <div class="box_news">
+                    <img src="./new-3.jpg">
+                    <div class="title_news"><a href="">12 chiếc đồng hồ dành cho nữ giới đắt giá nhất mọi thời đại
+                    </a></div>
+                    <div class="description_news">Công nghiệp sản xuất đồng hồ sang trọng có dấu hiệu chững lại trong hai ...</div>
+                </div>
+                <div class="box_news">
+                    <img src="./new-4.jpg">
+                    <div class="title_news"><a href="">10 thương hiệu đồng hồ cao cấp hàng đầu mọi quý ông đều quan tâm, Rolex xếp hạng số 3...                    </a></div>
+                    <div class="description_news">1. Audemars Piguet Được thành lập vào năm 1875 bởi Jules-Louis Audemars và Edward-Auguste Piguet, ....</div>
+                </div>
+            </div>
+            </div>
+            <div class="contact_us">
+                <div class="title_contact"><h1>Liên hệ</h1></div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.8025459042847!2d108.16776031495428!3d16.075732988876943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218e6e07b1c3f%3A0x459e4bf5a2af323e!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYyDEkMOgIE7hurVuZw!5e0!3m2!1svi!2s!4v1680070403454!5m2!1svi!2s" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="box_contact">
+                    <div class="local">
+                        <div class="title"><h3><i class="fa-solid fa-location-dot"></i>Địa chỉ:</h3></div>
+                        <div class="description">137 Nguyễn Thị Thập, Thanh Khê Tây, Liên Chiểu, Đà Nẵng</div>
+                    </div>
+                    <div class="phone">
+                        <div class="title"><h3><i class="fa-solid fa-phone-volume"></i>Điện thoại:</h3></div>
+                        <div class="description">
+                           <h3> 1900 456 789</h3>
+                           <p> Bấm 1 – Phòng kinh doanh</p>
+                           <p>Bấm 2 – Phòng kỹ thuật</p> 
+                            </div>
+                    </div>
+                    <div class="mail">
+                        <div class="title"><h3><i class="fa-solid fa-envelope"></i>Email:</h3></div>
+                        <div class="description">Lphuonguye.ecn.2182004@gmail.com</div>
+                    </div>
+                </div>
+                <div class="form">
+                    <form>
+                        <input type="text" class="input" placeholder="Họ và tên">
+                        <input type="email" class="input" placeholder="Email">
+                        <input type="text" class="input" placeholder="Số điện thoại">
+                        <input type="text" class="input" placeholder="Địa chỉ">
+                        <textarea name="" id="" placeholder="Lời nhắn" ></textarea>
+                        <input type="submit" value="Gửi">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </content>
+    <footer>
+        <div class="footer">
+            <div class="license">© Bản quyền thuộc về . Thiết kế website NguyenLP04</div>
+            <img src="./img-payment.png">
+        </div>
+    </footer>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
