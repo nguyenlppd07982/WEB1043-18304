@@ -4,26 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đồng Hồ NguyenLP</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/59847bd5e5.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="login-container hiden_form">
+        <form class="login-form" onsubmit="return false">
+            <i class="fa-solid fa-xmark"></i>
+          <h1>Login</h1>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      
   <div id="up" class="container">
     <a href="#up"><div class="btn"><i class="fa-solid fa-angles-up fa-xl"></i></div></a>
     <head>
         <nav>
             <div class="nav_head">
                 <div class="logo">
-                    <img src="./logo.png">
+                    <img src="./img/logo.png">
                 </div>
                 <div class="seach">
                     <input type="text" placeholder="Tìm Kiếm"><i class="fa-solid fa-magnifying-glass"></i>
                     
                 </div>
                 <div class="cart">
-                    <a href="">ĐĂNG NHẬP</a>
-                    <a href=""><i class="fa-solid fa-heart"></i></a>
+                    <div class="btn_login" href="">ĐĂNG NHẬP</div>
+                    <a href=""><i class="fa-solid heart_top fa-heart"></i></a>
                     <a class="shopping" href=""><div class="number_products">0</div><i class="fa-solid fa-cart-shopping"></i></a>
                 </div>
             </div>
@@ -44,7 +62,7 @@
                     <div class="description_watch">Cùng với sự phát triển không ngừng  của thời trang thế giới, rất nhiều thương hiệu cho ra đời những mẫu đồng hồ nam chính hãng đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ...</div>
                     <a href="#products"><div class="view_product">XEM SẢN PHẨM</div></a>
                 </div>
-                <img src="./slide-bg-2.jpg" style="width:100%">
+                <img src="./img/slide-bg-2.jpg" style="width:100%">
             </div>
             <div class="mySlide">
                 <div class="box_watch">
@@ -53,7 +71,7 @@
                     <div class="description_watch">Cùng với sự phát triển không ngừng  của thời trang thế giới, rất nhiều thương hiệu cho ra đời những mẫu đồng hồ nam chính hãng đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ...</div>
                     <a href="#products"><div class="view_product">XEM SẢN PHẨM</div></a>
                 </div>
-                <img src="./slide-bg-1.jpg" style="width:100%">
+                <img src="./img/slide-bg-1.jpg" style="width:100%">
             </div>
             <div class="mySlide">
                 <div class="box_watch">
@@ -62,7 +80,7 @@
                     <div class="description_watch">Cùng với sự phát triển không ngừng  của thời trang thế giới, rất nhiều thương hiệu cho ra đời những mẫu đồng hồ nam chính hãng đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ...</div>
                     <a href="#products_page1"><div class="view_product">XEM SẢN PHẨM</div></a>
                 </div>
-                <img src="./banner3.jpeg" style="width:100%">
+                <img src="./img/banner3.jpeg" style="width:100%">
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
              <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -97,26 +115,30 @@
                     </div>
                 </div>
                 <div class="selling_products">
-                    <h3 id="products">Sản phẩm bán chạy</h3>
+                    <h3  id="products">Sản phẩm bán chạy</h3>
                 <div class="products">
                     <div class="box_products">
-                        <div class="img_products"><img src="./product-05.png"></div>
+                        <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                        <div class="img_products" ><img src="./img/product-05.png"></div>
                         <div class="name_products">Products 1</div>
                         <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
                         <button class="add_cart" onclick="add_cart();" >THÊM VÀO GIỎ</button>
                     </div>
                     <div class="box_products">
-                        <div class="img_products"><img src="./product-04.png"></div>
+                        <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                        <div class="img_products"><img src="./img/product-04.png"></div>
                         <div class="name_products">Products 2</div>
                         <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
                         <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                     </div><div class="box_products">
-                        <div class="img_products"><img src="./product-03.png"></div>
+                        <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                        <div class="img_products"><img src="./img/product-03.png"></div>
                         <div class="name_products">Products 3</div>
                         <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
                         <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                     </div><div class="box_products">
-                        <div class="img_products"><img src="./product-02.png"></div>
+                        <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                        <div class="img_products"><img src="./img/product-02.png"></div>
                         <div class="name_products">Products 4</div>
                         <div class="price_products"><del>700.000đ</del>&nbsp;500.000đ</div>
                         <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
@@ -147,49 +169,57 @@
                 <div class="products">
                     <div id ="products_page1" class="productsAll products_page1">
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-06.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-06.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-08.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-08.jpg"></div>
                             <div class="name_products">Products 2</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-09.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-09.jpg"></div>
                             <div class="name_products">Products 3</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-10.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-10.jpg"></div>
                             <div class="name_products">Products 4</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-11.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-11.jpg"></div>
                             <div class="name_products">Products 5</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-12.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-12.jpg"></div>
                             <div class="name_products">Products 6</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-13.jpg"></div>
                             <div class="name_products">Products 7</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-14.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-14.jpg"></div>
                             <div class="name_products">Products 8</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
@@ -197,49 +227,57 @@
                     </div>
                     <div style="display: none" class="productsAll products_page2">
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-10.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-10.jpg"></div>
                             <div class="name_products">Products 9</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-11.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-11.jpg"></div>
                             <div class="name_products">Products 10</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-07.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-07.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-06.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-06.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-08.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-08.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-13.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-13.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-12.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-12.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
@@ -247,49 +285,57 @@
                     </div>
                     <div style="display: none" class="productsAll products_page3">
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-07.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-07.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-08.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-08.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-01.png"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-01.png"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-06.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-06.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-13.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-13.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-11.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-11.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-12.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-12.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
                         </div>
                         <div class="box_products">
-                            <div class="img_products"><img src="./product-09.jpg"></div>
+                            <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
+                            <div class="img_products"><img src="./img/product-09.jpg"></div>
                             <div class="name_products">Products 1</div>
                             <div class="price_products">800.000đ</div>
                             <button class="add_cart" onclick="add_cart();">THÊM VÀO GIỎ</button>
@@ -300,7 +346,7 @@
             <div id="introduce" class="introduce">
                 <h1>Giới thiệu</h1>
                 <div class="box_intro">
-                    <img src="./about-us_bg.jpg" alt="">
+                    <img src="./img/about-us_bg.jpg" alt="">
                     <div class="about_us">
                         <div class="title"><h1>Giới thiệu về Watch NguyenLP</h1> </div>
                         <div class="description">“Cùng với sự phát triển không ngừng của thời trang thế giới, rất nhiều thương hiệu cho ra đời những mẫu đồng hồ nam chính hãng đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ… Một chiếc đồng hồ nam cao cấp chính hãng khắc họa một giá trị đích thực khi nói đến phụ kiện xa xỉ dành cho phái mạnh. Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay. Trên cổ tay của những người đàn ông thành đạt luôn dành vị trí cho một chiếc đồng hồ nam cao cấp.”
@@ -340,18 +386,18 @@
                 <h1>Tin tức</h1>
                 <div class="news">
                 <div class="box_news">
-                    <img src="./new-3.jpg">
+                    <img src="./img/new-3.jpg">
                     <div class="title_news"><a href="">Chiếc đồng hồ của những CEO quyền lực nhất thế giới</a></div>
                     <div class="description_news">Đối với một số doanh nhân, một chiếc đồng hồ đeo tay không chỉ là ...</div>
                 </div>
                 <div class="box_news">
-                    <img src="./new-3.jpg">
+                    <img src="./img/new-3.jpg">
                     <div class="title_news"><a href="">12 chiếc đồng hồ dành cho nữ giới đắt giá nhất mọi thời đại
                     </a></div>
                     <div class="description_news">Công nghiệp sản xuất đồng hồ sang trọng có dấu hiệu chững lại trong hai ...</div>
                 </div>
                 <div class="box_news">
-                    <img src="./new-4.jpg">
+                    <img src="./img/new-4.jpg">
                     <div class="title_news"><a href="">10 thương hiệu đồng hồ cao cấp hàng đầu mọi quý ông đều quan tâm, Rolex xếp hạng số 3...                    </a></div>
                     <div class="description_news">1. Audemars Piguet Được thành lập vào năm 1875 bởi Jules-Louis Audemars và Edward-Auguste Piguet, ....</div>
                 </div>
@@ -380,11 +426,11 @@
                 </div>
                 <div class="form">
                     <form onsubmit="return false">
-                        <input type="text" class="input" placeholder="Họ và tên">
+                        <input type="text" class="input name_input"  placeholder="Họ và tên">
                         <input type="email" class="input formMail" placeholder="Email">
                         <input type="text" class="input formPhone" placeholder="Số điện thoại">
-                        <input type="text" class="input" placeholder="Địa chỉ">
-                        <textarea name="" id="" placeholder="Lời nhắn" ></textarea>
+                        <input type="text" class="input local_input" placeholder="Địa chỉ">
+                        <textarea name="" id="" class="textarea" placeholder="Lời nhắn" ></textarea>
                         <input onclick="showNotification()" type="submit" value="Gửi">
                     </form>
                     <div class="notifi">
@@ -400,7 +446,7 @@
     <footer>
         <div class="footer">
             <div class="license">© Bản quyền thuộc về . Thiết kế website NguyenLP04</div>
-            <img src="./img-payment.png">
+            <img src="./img/img-payment.png">
         </div>
     </footer>
   </div>

@@ -4,10 +4,85 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
+
+.login-container {
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .hiden_form{
+    display: none;
+  }
+
+  .login-form {
+    background: #fff;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+  }
+  
+  .fa-xmark{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+  .login-form h1 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+  }
+
+  
+
+html{
+    scroll-behavior: smooth;
+   
+
+}
 .container{
     width: 100vw;
     min-height: 100vh;
-}
+   
+}   
 .btn{
     z-index: 1;
     width: 40px;
@@ -65,7 +140,7 @@ body{
     background-color: #C8997A;
 } 
 
-.fa-heart:hover{
+.heart_top:hover{
     color: red;
     transition: all 0.3s ease;
 }
@@ -74,12 +149,15 @@ body{
     align-items: center;
     
 }
-.cart a {
+.cart a,
+.cart .btn_login{
     font-weight: bold;
     color: #fff;
     text-decoration: none;
     padding: 0 10px;
+    cursor: pointer;
 }
+
 .cart a i {
     font-size: 30px;
 }
@@ -157,7 +235,8 @@ body{
     right: 0;
     border-radius: 3px 0 0 3px;
   }
-  .prev:hover, .next:hover {
+  .prev:hover, 
+  .next:hover {
     background-color: rgba(0,0,0,0.8);
   }
 .prev, .next {
@@ -187,7 +266,7 @@ justify-content: space-between;
 margin-bottom: 60px;
 }
 .trend .trend_male {
-    background-image: url(./trend-1.jpg);
+    background-image: url(./img/trend-1.jpg);
     height: 300px;
     width: 50%;
     background-size: cover;
@@ -199,7 +278,7 @@ margin-bottom: 60px;
     }
 .trend .trend_female {
     margin-left: 10px;
-    background-image:url(./trend-2.jpg);
+    background-image:url(./img/trend-2.jpg);
     height: 300px;
     width: 50%;
     background-size: cover;
@@ -265,7 +344,7 @@ margin-bottom: 60px;
 }
 
 .trend2 .trend_classic {
-    background-image: url(./banner-03.jpg);
+    background-image: url(./img/banner-03.jpg);
     height: 300px;
     width: 50%;
     background-size: cover;
@@ -277,7 +356,7 @@ margin-bottom: 60px;
     }
 .trend2 .trend_smart {
     margin-left: 10px;
-    background-image:url(./banner-04.jpg);
+    background-image:url(./img/banner-04.jpg);
     height: 300px;
     width: 50%;
     background-size: cover;
@@ -381,7 +460,7 @@ justify-content: space-between;
     /* width: 100%; */
     height: 500px;
     background-color: #C8997A;
-    background-image: url(./banner-04.jpg);
+    background-image: url(./img/banner-04.jpg);
     font-size: 30px;
     background-size: 100% 100%;
     background-repeat: no-repeat; 
@@ -505,6 +584,29 @@ form{
 .shopping{
     position: relative;
 }
+.products .box_products{
+    position: relative;
+}
+.products .heart_products{
+    position: absolute;
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid #E0E0E0;
+    top: 10px;
+    cursor: pointer;
+    right: 10px;
+}
+.products .heart_products i{
+    font-size: 24px;
+}
+.heart_test{
+    color: #E0E0E0;
+
+}
+.heart_red{
+    color: red;
+}
+
 .number_products{
     display: flex;
     justify-content: center;
