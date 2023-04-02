@@ -16,17 +16,17 @@
           <h1>Login</h1>
           <div class="form-group">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" autocomplete="off"  required>
           </div>
           <div class="form-group">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" autocomplete="off"  required>
           </div>
 
-          <button type="submit">Login</button>
+          <button id="submit" type="submit">Login</button>
+          <div class="notify_login">Nhập sai mật khẩu</div>
         </form>
       </div>
-      
   <div id="up" class="container">
     <a href="#up"><div class="btn"><i class="fa-solid fa-angles-up fa-xl"></i></div></a>
     <head>
@@ -37,15 +37,53 @@
                 </div>
                 <div class="seach">
                     <input type="text" placeholder="Tìm Kiếm"><i class="fa-solid fa-magnifying-glass"></i>
-                    
                 </div>
                 <div class="cart">
                     <div class="btn_login" href="">ĐĂNG NHẬP</div>
                     <a href=""><i class="fa-solid heart_top fa-heart"></i></a>
-                    <a class="shopping" href=""><div class="number_products">0</div><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a class="shopping" href=""><div class="number_products">0</div>
+                        <div class="showCart">
+                        <div class="listProductsShow">
+                        <ul>
+                            <li><div class="imgTitle"><img src="./img/product-01.png" alt=""><div>Products 1</div></div></li>
+                            <li><div class="priceProductsShow">700.000đ</div> </li>
+                        </ul>
+                        <ul>
+                            <li><div class="imgTitle"><img src="./img/product-02.png" alt=""><div>Products 2</div></div></li>
+                            <li><div class="priceProductsShow">700.000đ</div> </li>
+                        </ul>
+                        <ul>
+                            <li><div class="imgTitle"><img src="./img/product-03.png" alt=""><div>Products 3</div></div></li>
+                            <li><div class="priceProductsShow">700.000đ</div> </li>
+                        </ul>
+                        <ul>
+                            <li><div class="imgTitle"><img src="./img/product-04.png" alt=""><div>Products 4</div></div></li>
+                            <li><div class="priceProductsShow">700.000đ</div> </li>
+                        </ul>      
+                        <ul>
+                            <li><div class="imgTitle"><img src="./img/product-05.png" alt=""><div>Products 5</div></div></li>
+                            <li><div class="priceProductsShow">700.000đ</div> </li>
+                        </ul>
+                        <ul>
+                            <li><div class="imgTitle"><img src="./img/product-06.jpg" alt=""><div>Products 6</div></div></li>
+                            <li><div class="priceProductsShow">700.000đ</div> </li>
+                        </ul>
+                        </div>
+                        <div class="countPrice">
+                        <div class="title">
+                            <div class="titleCheckOut">Tổng thanh toán</div>
+                            <div class="priceCheckOut">42.000.000đ</div>
+                        </div>
+                        
+                        <div class="CheckOut"><button>Thanh toán</button> </div>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-cart-shopping"></i></a>
+                    <div class="avt"></div>
+                    <div class="admin">NguyenLP</div>
                 </div>
             </div>
-            <div class="nav_menu">
+            <div class="nav_menu ">
                 <a href="">TRANG CHỦ</a>
                 <a href="#introduce">GIỚI THIỆU</a>
                 <a href="#popular_products">ĐỒNG HỒ NAM</a>
@@ -117,7 +155,7 @@
                 <div class="selling_products">
                     <h3  id="products">Sản phẩm bán chạy</h3>
                 <div class="products">
-                    <div class="box_products">
+                    <div class="box_products ">
                         <div class="heart_products"><i class="heart_test fa-solid fa-heart"></i></div>
                         <div class="img_products" ><img src="./img/product-05.png"></div>
                         <div class="name_products">Products 1</div>
@@ -162,7 +200,7 @@
                     </div>
                 </div>
                 <div id="popular_products" class="name_list_products">
-                    <h3 onclick="shows1()" class="group_products1 avtive">Sản phẩm phổ biến</h3>
+                    <h3 onclick="shows1()" class="group_products1 avtive ">Sản phẩm phổ biến</h3>
                     <h3 onclick="shows2()" class="group_products2">Sản phẩm khuyến mãi </h3>
                     <h3 onclick="shows3()" class="group_products3">Sản phẩm mới</h3>
                 </div>
@@ -378,7 +416,6 @@
                             <div class="title"><h3>Giá cả hợp lý</h3></div>
                             <div class="description">Hiện nay, đồng hồ là phụ kiện thời trang thiết yếu đối với những người đàn ông hiện đại ngày nay</div>
                         </td>
-
                     </tr>
                 </table>
             </div>
@@ -402,6 +439,26 @@
                     <div class="description_news">1. Audemars Piguet Được thành lập vào năm 1875 bởi Jules-Louis Audemars và Edward-Auguste Piguet, ....</div>
                 </div>
             </div>
+            </div>
+            <div class="product_reviews">
+                <div class="title_review"><h1>Khách hàng nói gì về NguyenLP Watch</h1></div>
+                <table>
+                    <tr>
+                        <td><img class="imgReview" src="./img/avatar-review1.jpeg" alt=""></td>
+                        <td><img class="imgReview" src="./img/avatar-review3.jpeg" alt=""></td>
+                        <td><img class="imgReview" src="./img/avatar-review2.jpeg" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><div class="content_review"> “Đồng hồ này có thiết kế đẹp, tinh tế và phù hợp với phong cách của tôi. Chất lượng của đồng hồ này rất tốt, đảm bảo độ chính xác và độ bền cao.”</div></td>
+                        <td><div class="content_review"> “Giá của đồng hồ này khá phải chăng và xứng đáng với chất lượng và thiết kế của nó. Kiểu dáng của đồng hồ này rất thời trang và phù hợp với nhiều phong cách khác nhau.”</div></td>
+                        <td><div class="content_review"> “Đồng hồ này được sản xuất bởi một thương hiệu nổi tiếng và uy tín, giúp tôi yên tâm về chất lượng và dịch vụ sau bán hàng.  Đồng hồ này có màu sắc đẹp và đa dạng, giúp tôi có nhiều sự lựa chọn để phù hợp với trang phục và hoàn cảnh sử dụng.”</div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="name_review">Emmanuel Macron</div></td>
+                        <td><div class="name_review">Jacinda Ardern</div></td>
+                        <td><div class="name_review">Scott Morrison</div></td>
+                    </tr>
+                </table>
             </div>
             <div id="contact_us" class="contact_us">
                 <div  class="title_contact"><h1>Liên hệ</h1></div>
