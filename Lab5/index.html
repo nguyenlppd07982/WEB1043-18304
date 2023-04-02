@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+      .container{
+        font-family: 'Poppins', sans-serif;
+        width: 30%;
+        height: 100%;
+        border: 1px solid black;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #446FE6;
+        color: rgb(255, 255, 255);
+        max-height: 90vh;
+        overflow: scroll;
+      }
+      h1{
+        text-align: center;
+      }
+      .input-title{
+        width: 80%;
+        padding: 0;
+        height: 30px;
+        border-radius: 8px;
+        font-size: 18px;
+        border: 1px solid black;
+
+      }
+      textarea{
+        padding: 0;
+        font-size: 18px;
+        width: 80%;
+        height: 100px;
+        border-radius: 8px;
+      }
+      .add{
+        margin-top: 20px;
+    }
+  .content{
+        display: flex;
+        align-items:flex-start;
+        flex-wrap: wrap;
+        
+    }
+    ul{
+        padding: 0;
+    }
+    .btn-task button{
+        margin-left: 10px;
+    }
+    li{
+        margin-right: 20px;
+        list-style: none;
+        max-width: 150px;
+        min-height: 40px;
+        word-wrap: break-word;
+    }
+    li:nth-child(2),
+    li:nth-child(3){
+        width: 150px;
+        min-height: 40px;
+    }
+    .listTask{
+        background-color: #F09B65;
+        border-radius: 10px;
+        padding-top: 10px;
+        padding-left: 5px;
+        font-weight: bold;
+    }
+   .btn-task button, .btn-task input{
+    border: none;
+    outline: none;
+    background-color: #a5dae0;
+    height: 35px;
+    width: 50px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+   }
+   .add{
+    background-color: #9da6b6;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TODO LIST</h1>
+       <h3>Tiêu để</h3> <input class="input-title" id="title" type="text">
+       <h3>Mô tả</h3> <textarea id="des" type="text" ></textarea>
+       <div class="btn"><button class="add" >Add Task</button></div>
+        <h3>Danh sách công việc</h3>
+        <!-- <div class="note">123</div>
+        <div class="note">123</div>
+        <div class="note">123</div> -->
+        <ul>
+            <div class="listTask">
+                <div class="content">
+                    <li>1</li>
+                    <li>Title</li>
+                    <li>Description</li>
+                    <div class="btn-task">
+                        <button class="delete">Delete</button>
+                        <input class="edit" value="Edit" type="button" >
+                    </div>
+                </div>
+                <hr></hr>
+            </div>
+        </ul>
+    </div>
+    <script>
+
+
+    // Tạo 1 mãng trống để thêm các task vào
+    var toDoList = []
+    function addTask(){
+        // Lấy giá trị của tiêu đề
+        var titletask = document.getElementById("title").value;
+        // Lấy giá trị của mô tả
+        var destask = document.getElementById("des").value;
+        // Nếu giá trị của mô tả > 20 và giá trị của tiêu để lớn hơn 5 thì thực hiên thêm giá trị tiêu để vào key title và giá trị mô tả vào key name
+        if(destask.length > 20 && titletask.length > 5) {
+            toDoList.unshift({
+                title: titletask,
+                name: destask
+            })
+            // Thực hiện renderTask()
+            renderTask()
+        } else {
+            // Nếu giá trị của mô tả < 20 và giá trị của tiêu để < 5 thì thực hiên thông báo người dùng nhập lại!
+            alert("Vui lòng nhập tiêu đề lớn hơn 5 ký tự và mô tả lớn hơn 20 ký tự!")
+        }
+        // Reset lại giá trị tiêu đề
+        document.getElementById("title").value = "";
+        // Reset giá trị mô tả
+        document.getElementById("des").value = "";
+        }
+        var addTasks = document.querySelector('.add')
+        addTasks.addEventListener('click', addTask)
+    function renderTask(){
+        // Khai báo task = chuỗi rỗng
+        let task = ""
+        // Duyệt qua  phần tử của mãng toDoList và thêm các giá trị của phần tử vào thẻ <li>
+        toDoList.map(function(item,index){
+        task += `<div class="listTask">
+                <div class="content">
+                    <li>${index+1}</li>
+                    <li class="tit">${item.title}</li>
+                    <li>${item.name}</li>
+                    <div class="btn-task">
+                        <button onclick="deleteTask(${index})" class="delete">Delete</button>
+                        <input class="edit" value="Edit" type="button" onclick="editTask(${index})">
+                    </div>
+                </div>
+                <hr></hr>
+                </div>`
+    })
+    // Thêm nội dung của task vào thẻ <>
+    document.querySelector('ul').innerHTML = task
+        }
+    function deleteTask(index) {
+        // Functione deleteTask lây vị trí của mảng và xoá bắt đầu tự vị trí đấy xoá 1 phần tử
+        toDoList.splice(index , 1)
+        // Hiển thị lại các Task
+        renderTask()
+        }
+        var deleteTasks = document.querySelector('.delete')
+        deleteTasks.addEventListener('click', deleteTask)
+    function editTask(index){
+        // Lấy value của tiêu đề trong danh sách bằng title của toDoList tại vị trí index (Vị trí của phần tử)
+        document.getElementById("title").value = toDoList[index].title
+        // Lấy value của mô tả trong danh sách bằng name của toDoList tại vị trí index (Vị trí của phần tử)
+        document.getElementById("des").value = toDoList[index].name
+        console.log(index)
+        // Thực hiện xoá Task bắt đầu từ vị trí của phần tử ấy và xoá 1 phần tử
+        toDoList.splice(index,1)
+        }
+        var editTasks = document.querySelector('.edit')
+        addTasks.addEventListener('click', editTask)
+    </script>
+</body>
+</html>
