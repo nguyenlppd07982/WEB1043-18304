@@ -37,7 +37,6 @@ var activeProducs3 = document.querySelector(".group_products3");
 // Hàm hiển thị sản phẩm theo tiêu đề
 function shows1() {
   var test = document.querySelector(".group_products1");
-  console.log(displayProducts3);
   displayProducts1.style.display = "flex";
   displayProducts2.style.display = "none";
   displayProducts3.style.display = "none";
@@ -48,7 +47,6 @@ function shows1() {
 // Hàm hiển thị sản phẩm theo tiêu đề
 function shows2() {
   var test = document.querySelector(".group_products1");
-  console.log(displayProducts3);
   displayProducts1.style.display = "none";
   displayProducts2.style.display = "flex";
   displayProducts3.style.display = "none";
@@ -59,7 +57,6 @@ function shows2() {
 // Hàm hiển thị sản phẩm theo tiêu đề
 function shows3() {
   var test = document.querySelector(".group_products1");
-  console.log(displayProducts3);
   displayProducts1.style.display = "none";
   displayProducts2.style.display = "none";
   displayProducts3.style.display = "flex";
@@ -132,16 +129,18 @@ function showNotification() {
     document.querySelector(".local_input").value = "";
   }
 }
-var count_cart = document.querySelector(".add_cart");
+
 var number_products = document.querySelector(".number_products");
 var count = 0;
 // Hàm hiển thị số lượng sản phẩm đã thêm ở cart
 function add_cart() {
   count++;
   number_products.innerHTML = count;
-  console.log(count);
 }
-
+var count_cart = document.getElementsByClassName("add_cart");
+for (let i = 0; i < count_cart.length; i++) {
+  count_cart[i].addEventListener("click", add_cart);
+}
 var element = document.getElementsByClassName("heart_products");
 for (let i = 0; i < element.length; i++) {
   // Hàm thêm class 'heart_red' và chuyển thành màu đỏ
@@ -149,7 +148,6 @@ for (let i = 0; i < element.length; i++) {
     console.log(i);
     var btn_heart = document.querySelectorAll(".heart_test");
     btn_heart[i].classList.toggle("heart_red");
-    console.log(btn_heart);
   };
 }
 var btn_login = document.querySelector(".btn_login");
@@ -191,7 +189,6 @@ document.querySelector("#submit").addEventListener("click", function () {
     document.querySelector(".admin").style.display = "block";
   } else {
     // Login không thành công sẽ hiển thị thông báo
-    console.log(typeof userValue);
     document.querySelector(".notify_login").style.display = "block";
   }
 });
@@ -221,7 +218,6 @@ for (let i = 0; i < imgReview.length; i++) {
   });
 }
 
-// count_cart.addEventListener("click", showSuccessToast)
 var btnAddCart = document.getElementsByClassName("add_cart");
 for (let i = 0; i < btnAddCart.length; i++) {
   btnAddCart[i].addEventListener("click", showSuccessToast);
@@ -231,18 +227,17 @@ function showSuccessToast() {
     title: "Thành công!",
     message: "Thêm vào giỏ hàng thành công.",
     type: "success",
-    duration: 5000,
   });
 }
 // Toast function
-function toast({ title = "", message = "", type = "info", duration = 3000 }) {
+function toast({ title = "", message = "", type = "info" }) {
   const main = document.getElementById("toast");
   if (main) {
     const toast = document.createElement("div");
     // Auto remove toast
     const autoRemoveId = setTimeout(function () {
       main.removeChild(toast);
-    }, duration + 1000);
+    }, 3000);
     // Remove toast when clicked
     toast.onclick = function (e) {
       if (e.target.closest(".toast__close")) {
@@ -250,20 +245,16 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
         clearTimeout(autoRemoveId);
       }
     };
-    const icons = {
-      success: "fas fa-check-circle",
-    };
-    const icon = icons[type];
-    const delay = (duration / 1000).toFixed(2);
-    toast.classList.add("toast", `toast--${type}`);
-    toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+    // const delay = (duration / 1000).toFixed(2);
+    toast.classList.add("toast", "toast--success");
+    toast.style.animation = `slideInLeft ease .5s, fadeOut linear 1s 1.5s forwards`;
     toast.innerHTML = `
                 <div class="toast__icon">
-                    <i class="${icon}"></i>
+                    <i class="fas fa-check-circle"></i>
                 </div>
                 <div class="toast__body">
-                    <h3 class="toast__title">${title}</h3>
-                    <p class="toast__msg">${message}</p>
+                    <h3 class="toast__title">Thành công!</h3>
+                    <p class="toast__msg">Thêm vào giỏ hàng thành công.</p>
                 </div>
                 <div class="toast__close">
                     <i class="fas fa-times"></i>
@@ -272,3 +263,60 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
     main.appendChild(toast);
   }
 }
+
+var totalPrice = 0;
+function addCartContent() {
+  for (let i = 0; i < btnAddCart.length; i++) {
+    btnAddCart[i].addEventListener("click", function () {
+      // Thẻ box_products
+      var indexBoxProducts = box_products[i];
+      // Giá
+      var priceAddCart = indexBoxProducts
+        .querySelector(".price_products")
+        .innerText.replace("đ", "");
+      // Tên
+      var nameProducts =
+        indexBoxProducts.querySelector(".name_products").innerText;
+      var imgProducts = indexBoxProducts.querySelector(".img_products img").src;
+      var splitArrayPrice = priceAddCart.split(" ");
+      console.log(splitArrayPrice);
+      var ArrayPricelength = splitArrayPrice.length;
+      if (ArrayPricelength == 2) {
+        var PriceAfter = splitArrayPrice[1].replace("đ", "");
+      } else {
+        var PriceAfter = splitArrayPrice.toString();
+      }
+      console.log(PriceAfter);
+      var num = parseFloat(PriceAfter.replaceAll(".", ""));
+      totalPrice += num;
+      console.log(totalPrice);
+      var showPriceString =
+        totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đ";
+      console.log(showPriceString);
+
+      document.querySelector(".priceCheckOut").innerHTML = showPriceString;
+      const html = `
+      <li>
+        <div class="imgTitle">
+          <img src="${imgProducts}" alt="" />
+          <div>${nameProducts}</div>
+        </div>
+      </li>
+      <li>
+        <div class="priceProductsShow">${PriceAfter} đ</div>
+      </li>`;
+      const node = document.createElement("ul");
+      node.innerHTML = html;
+      var list = document.querySelector(".listProductsShow");
+      list.insertBefore(node, list.firstChild);
+    });
+  }
+}
+addCartContent();
+
+// Ngăn chặn load lại trang khi nhấn nút 'Thanh toán'
+const myButton = document.querySelector(".check");
+myButton.addEventListener("click", function (event) {
+  // Ngăn chặn hành động mặc định của nút
+  event.preventDefault();
+});
