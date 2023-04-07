@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        border-radius: 3px;
+        width: 700px;
+        padding: 20px;
+        background-color: rgb(96, 72, 72);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+      }
+      video {
+        width: 600px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        height: 30px;
+        width: 120px;
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <video class="video">
+        <source src="./doraemon.mp4" />
+      </video>
+      <div class="btn">
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="stopVideo()">Stop</button>
+        <button onclick="upVolume()">Tăng âm lượng</button>
+        <button onclick="downVolume()">Giảm âm lượng</button>
+        <button class="loop" onclick="autoPlay()">Lặp lại</button>
+      </div>
+    </div>
+    <script>
+      const video = document.querySelector(".video");
+      function playPause() {
+        // Thuộc tính paused để kiểm tra video đang tạm dừng hay không
+        // Nếu video dừng thì cho tiếp tục video
+        // Nếu video không dừng thì cho dừng video
+        video.paused ? video.play() : video.pause();
+      }
+      function stopVideo() {
+        // Methods pause() dùng để dừng video
+        video.pause();
+      }
+      var loop = document.querySelector(".loop");
+      var autoVideo = false;
+      function autoPlay() {
+        // Nếu lần bấm đầu tiên thì video sẽ lặp lại
+        // video.loop = phủ định của autoVideo = true vì autoVideo được khai báo = false
+        // Nếu video.loop = true thì video sẽ được lặp lại
+        video.loop = !autoVideo;
+        // Nêu video.loop = true thì loop.innerHTML = "Không lặp lại" ngược lại thì loop.innerHTML = "Lặp lại"
+        loop.innerHTML = video.loop ? "Không lặp lại" : "Lặp lại";
+        // autoVideo = phủ định của autoVideo
+        autoVideo = !autoVideo;
+      }
+      function upVolume() {
+        // Nếu video.volume < 1 thì thực hiện cộng volume 0.1
+        // Néu video.volume = 1 thì  video.volume =  video.volume
+        video.volume = video.volume < 1 ? video.volume + 0.1 : video.volume;
+      }
+      function downVolume() {
+        // Nếu video.volume > 0 thì thực hiện trừ volume 0.1
+        // Néu video.volume = 0 thì  video.volume =  video.volume
+        video.volume = video.volume > 0 ? video.volume - 0.1 : video.volume;
+      }
+    </script>
+  </body>
+</html>
