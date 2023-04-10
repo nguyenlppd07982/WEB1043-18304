@@ -322,3 +322,17 @@ myButton.addEventListener("click", function (event) {
   // Ngăn chặn hành động mặc định của nút
   event.preventDefault();
 });
+
+var slideContainer = document.querySelector(".slide-container");
+
+window.addEventListener("scroll", function () {
+  var nav_menu = document.querySelector(".nav_menu");
+  if (window.pageYOffset >= 105) {
+    nav_menu.classList.add("fixed-menu");
+    var fixedmenu = document.querySelector(".fixed-menu");
+    slideContainer.style.paddingTop = "66px";
+  } else {
+    nav_menu.classList.remove("fixed-menu");
+    slideContainer.style.paddingTop = "0px";
+  }
+});

@@ -77,8 +77,6 @@ button[type="submit"] {
 html {
     scroll-behavior: smooth;
     transition: all 0.3s;
-
-
 }
 
 .container {
@@ -208,11 +206,17 @@ html {
 .nav_menu a:hover {
     color: #C8997A;
 }
-
+.fixed-menu{
+    position: fixed;
+    top: 0;
+}
 .nav_menu {
+    transition: all 0.3s ease;
+    z-index: 6;
     background-color: #333333;
     padding: 25px;
     display: flex;
+    width: 100vw;
     justify-content: center;
 }
 
