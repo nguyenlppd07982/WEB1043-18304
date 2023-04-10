@@ -347,7 +347,15 @@ html {
 .listProductsShow {
     overflow: scroll;
     height: 300px;
-
+    position: relative;
+}
+.notifyNoProducts{
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:#9a9696;
 }
 .listProductsShow ul:hover{
     background-color: #fbf2f2;
@@ -376,10 +384,10 @@ html {
 }
 .showCart {
     display: none;
-    border-radius: 2px;
+    border-radius: 4px;
     width: 320px;
     background-color: #fff;
-    border: 1px solid #000;
+    border: 1px solid #c6c0c0;
     position: absolute;
     right: 0;
     top: 50px;
@@ -412,6 +420,8 @@ html {
     font-weight: bold;
     margin-bottom: 15px;
     cursor: pointer;
+    border-radius: 2px;
+
 }
 
 .countPrice .title {
@@ -422,7 +432,7 @@ html {
 
 .countPrice {
     height: 20%;
-    border-top: 1px solid #ed5959;
+    border-top: 1px solid #c6c0c0;
     bottom: 0;
     z-index: 5;
     font-weight: 500;
@@ -1061,4 +1071,10 @@ footer {
     font-size: 20px;
     color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+.notifyNoProducts{
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }

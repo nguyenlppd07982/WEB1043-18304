@@ -224,9 +224,9 @@ for (let i = 0; i < btnAddCart.length; i++) {
 }
 function showSuccessToast() {
   toast({
-    title: "Thành công!",
-    message: "Thêm vào giỏ hàng thành công.",
-    type: "success",
+    title: "",
+    message: "",
+    type: "",
   });
 }
 // Toast function
@@ -245,7 +245,6 @@ function toast({ title = "", message = "", type = "info" }) {
         clearTimeout(autoRemoveId);
       }
     };
-    // const delay = (duration / 1000).toFixed(2);
     toast.classList.add("toast", "toast--success");
     toast.style.animation = `slideInLeft ease .5s, fadeOut linear 1s 1.5s forwards`;
     toast.innerHTML = `
@@ -265,6 +264,8 @@ function toast({ title = "", message = "", type = "info" }) {
 }
 
 var totalPrice = 0;
+
+function countPrice() {}
 function addCartContent() {
   for (let i = 0; i < btnAddCart.length; i++) {
     btnAddCart[i].addEventListener("click", function () {
@@ -308,6 +309,7 @@ function addCartContent() {
       const node = document.createElement("ul");
       node.innerHTML = html;
       var list = document.querySelector(".listProductsShow");
+      document.querySelector(".notifyNoProducts").style.display = "none";
       list.insertBefore(node, list.firstChild);
     });
   }
