@@ -217,6 +217,7 @@ html {
     padding: 25px;
     display: flex;
     width: 100vw;
+    transform: translateX(-50px);
     justify-content: center;
 }
 
