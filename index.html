@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .items {
+      /* width: 100vw; */
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 25% 25% 25%;
+      grid-template-rows: 25% 25%;
+    }
+
+    .item {}
+
+    .item:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .item:nth-child(2) {
+      grid-column-start: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+
+    }
+
+    img {
+      width: 100%;
+      background-size: cover;
+      object-fit: cover;
+
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="items">
+    <div class="item"><img src="./avatar.png"></div>
+    <div class="item"><img src="./avatar.png"></div>
+    <div class="item"><img src="./avatar.png"></div>
+    <div class="item"><img src="./avatar.png"></div>
+    <div class="item"><img src="./avatar.png"></div>
+  </div>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var persons = [
+      { name: "Apple", color: "Red", price: 2.5 },
+      { name: "Apple", color: "Red", price: 2.5 },
+      { name: "Apple", color: "Red", price: 2.5 },
+
+      { name: "Banana", color: "Yellow", price: 1.5 },
+      { name: "Orange", color: "Orange", price: 3 },
+      { name: "Grape", color: "Purple", price: 4 },
+      { name: "Watermelon", color: "Green", price: 5 }
+    ];
+
+    // filter trả về object có value trùng với điều kiện
+    // var filterPerson = persons.filter(function (person) {
+    //   return person.name === 'Apple'
+    // })
+    // console.log(filterPerson);
+
+    // filter trả về 1 object có value trùng với điều kiện
+    // var findPerson = persons.find(function (person) {
+    //   return person.name === 'Apple'
+    // })
+    // console.log(findPerson);
+
+    // Duêtj qua và return về các item mà nó duyệt qua
+    var mapPerson = persons.map(function (person) {
+      return person
+    })
+    console.log(mapPerson);
+  </script>
+</body>
+
+</html>
