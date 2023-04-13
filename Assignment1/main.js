@@ -265,7 +265,6 @@ function toast({ title = "", message = "", type = "info" }) {
 
 var totalPrice = 0;
 
-function countPrice() {}
 function addCartContent() {
   for (let i = 0; i < btnAddCart.length; i++) {
     btnAddCart[i].addEventListener("click", function () {
