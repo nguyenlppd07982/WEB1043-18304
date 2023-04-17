@@ -64,6 +64,20 @@ function shows3() {
   activeProducs2.classList.remove("avtive");
   activeProducs1.classList.remove("avtive");
 }
+
+// var group_products = document.querySelectorAll('.group_products')
+// var productsAll = document.querySelectorAll('.productsAll')
+
+// for (let i = 0; i < group_products.length; i++) {
+//   group_products[i].addEventListener('click', function () {
+//     for (let i = 0; i < productsAll.length; i++) {
+//       productsAll[i].style.display = 'none'
+//     }
+//     content[i].style.display = 'block'
+//   })
+
+// }
+
 let slideIndex = 1;
 showSlides(slideIndex);
 function plusSlides(n) {
@@ -90,43 +104,90 @@ function showSlides(n) {
 // Hàm hiển thị thông báo và kiểm tra các value trong form ở footer
 function showNotification() {
   // Lấy value SDT để kt đúng định dạng hay kh
-  var lengthPhone = document.querySelector(".formPhone").value;
-  var valueEmail = document.querySelector(".formMail").value;
+  var phone_input = document.querySelector(".formPhone");
+  var mail_input = document.querySelector(".formMail");
   var notification = document.querySelector(".notification");
   var notificationMail = document.querySelector(".notificationMail");
   var notificationPhone = document.querySelector(".notificationPhone");
+  var notificationAll = document.querySelector(".notificationAll");
+  var name_input = document.querySelector(".name_input");
+  var local_input = document.querySelector(".local_input");
+  var textarea_input = document.querySelector(".textarea_input");
   notificationPhone.style.display = "none";
   notificationMail.style.display = "none";
   notification.style.display = "none";
   var notiPhone = false;
-  var notiMail = true;
+  var notiMail = false;
+  var notiName = false;
+  var notiLocal = false;
+  var notiTextarea = false;
+
   // Vị trí @
-  var atposition = valueEmail.indexOf("@");
+  var atposition = mail_input.value.indexOf("@");
   // Vị trí cuối cùng của "."
-  var dotposition = valueEmail.lastIndexOf(".");
+  var dotposition = mail_input.value.lastIndexOf(".");
   // Nếu vị trí @ < 1 hoặc
   // vị trí cuối của "." < vị trí @ +2 hoặc
   // vị trí cuối của "." + 2 >= độ dài của mail
   if (
     atposition < 1 ||
     dotposition < atposition + 2 ||
-    dotposition + 2 >= valueEmail.length
+    dotposition + 2 >= mail_input.value.length
   ) {
     notificationMail.style.display = "block";
+    mail_input.classList.add("showError");
     notiMail = false;
+  } else {
+    mail_input.classList.remove("showError");
+    notiMail = true;
   }
-  if (lengthPhone.length != 10) {
+  if (name_input.value.length < 5) {
+    notificationAll.style.display = "block";
+    name_input.classList.add("showError");
+  } else {
+    notiName = true;
+    name_input.classList.remove("showError");
+  }
+  if (local_input.value.length < 5) {
+    notificationAll.style.display = "block";
+    local_input.classList.add("showError");
+  } else {
+    notiLocal = true;
+    local_input.classList.remove("showError");
+    notificationAll.style.display = "none";
+  }
+  if (textarea_input.value.length < 5) {
+    textarea_input.classList.add("showError");
+
+    notificationAll.style.display = "block";
+  } else {
+    textarea_input.classList.remove("showError");
+
+    notiTextarea = true;
+  }
+  if (phone_input.value.length != 10) {
+    phone_input.classList.add("showError");
+
     notificationPhone.style.display = "block";
   } else {
     notiPhone = true;
+    phone_input.classList.remove("showError");
   }
-  if (notiPhone == true && notiMail == true) {
+
+  console.log(notiName, notiMail, notiLocal, notiPhone, notiTextarea);
+  if (
+    notiName == true &&
+    notiPhone == true &&
+    notiMail == true &&
+    notiLocal == true &&
+    notiTextarea == true
+  ) {
     notification.style.display = "block";
     document.querySelector(".formPhone").value = "";
     document.querySelector(".formMail").value = "";
-    document.querySelector(".name_input").value = "";
-    document.querySelector(".textarea").value = "";
-    document.querySelector(".local_input").value = "";
+    name_input.value = "";
+    textarea_input.value = "";
+    local_input.value = "";
   }
 }
 

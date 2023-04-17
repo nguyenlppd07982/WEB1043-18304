@@ -855,14 +855,17 @@ form {
 
 .form .input {
     background-color: #F1F1F1;
-    border: none;
+    border: 0px solid #ff0000;
     outline: none;
     height: 35px;
     width: 48%;
     margin: 5px 0;
     padding-left: 8px;
 }
-
+.form .showError{
+    border: 1.5px solid red;
+    border-radius: 3px;
+}
 .shopping {
     position: relative;
 }
@@ -910,7 +913,7 @@ form {
 
 .form textarea:focus,
 .form .input:focus {
-    box-shadow: 0 0 4px rgb(215, 35, 35);
+    box-shadow: 0 0 4px rgb(145, 143, 143);
 }
 
 .form textarea {
@@ -976,9 +979,13 @@ footer {
     font-weight: bold;
 }
 
+
+.notificationAll,
 .notificationPhone,
 .notificationMail {
     display: none;
+    color: #cc0000;
+    font-weight: bold;
 }
 
 .notifi {
@@ -1084,3 +1091,4 @@ footer {
     justify-content: center;
     align-items: end;
 }
+
