@@ -83,9 +83,7 @@ showSlides(slideIndex);
 function plusSlides(n) {
   showSlides((slideIndex += n));
 }
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
+
 // Hàm hiển thị banner
 function showSlides(n) {
   let i;
